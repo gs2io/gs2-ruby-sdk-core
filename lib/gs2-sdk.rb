@@ -1,0 +1,10 @@
+begin; require 'gs2-auth'; rescue LoadError; end
+begin; require 'gs2-identifier'; rescue LoadError; end
+begin; require 'gs2-inbox'; rescue LoadError; end
+begin; require 'gs2-matchmaking'; rescue LoadError; end
+begin; require 'gs2-notification'; rescue LoadError; end
+begin; require 'gs2-ranking'; rescue LoadError; end
+begin; require 'gs2-realtime'; rescue LoadError; end
+begin; require 'gs2-stamina'; rescue LoadError; end
+begin; require 'gs2-timer'; rescue LoadError; end
+begin; require 'gs2-watch'; rescue LoadError; end
