@@ -6,7 +6,7 @@ machine:
 checkout:
   post:
     - aws s3 cp s3://gs2-repos/python/publish/${PUBLISH_VERSION}/publish-${PUBLISH_VERSION}.tar.gz ~/ && tar -zxvf ~/publish-${PUBLISH_VERSION}.tar.gz -C ~/
-    - cp ~/publish-${PUBLISH_VERSION}/ruby/.gem ~/ && sudo chmod 600 ~/.gem/credentials
+    - cp -rf ~/publish-${PUBLISH_VERSION}/ruby/.gem ~/ && sudo chmod 600 ~/.gem/credentials
 
 test:
   override:
