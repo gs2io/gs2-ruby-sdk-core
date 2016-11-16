@@ -6,7 +6,6 @@ machine:
 checkout:
   post:
     - aws s3 cp s3://gs2-repos/python/publish/${PUBLISH_VERSION}/publish-${PUBLISH_VERSION}.tar.gz ~/ && tar -zxvf ~/publish-${PUBLISH_VERSION}.tar.gz -C ~/
-    - cp -rf ~/publish-${PUBLISH_VERSION}/ruby/.gem ~/ && sudo chmod 600 ~/.gem/credentials
 
 test:
   override:
@@ -16,5 +15,4 @@ deployment:
   maven:
     branch: master
     commands:
-      - bundle exec rake release
-    
+      - bash ~/publish-${PUBLISH_VERSION}/ruby/publish_rubygems.sh ~/publish-${PUBLISH_VERSION}/
