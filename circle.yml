@@ -16,3 +16,4 @@ deployment:
     branch: master
     commands:
       - bash ~/publish-${PUBLISH_VERSION}/ruby/publish_rubygems.sh ~/publish-${PUBLISH_VERSION}/
+      - bundle exec rake release
