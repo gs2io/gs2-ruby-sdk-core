@@ -1,0 +1,16 @@
+## Customize the test machine
+machine:
+  ruby:
+    version: ruby-2.3.1
+
+test:
+  override:
+    - echo "test"
+    
+deployment:
+  maven:
+    branch: master
+    commands:
+      - bundle update
+      - bundle exec rake release
+    
